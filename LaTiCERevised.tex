@@ -4,7 +4,7 @@
 \def\JHD{JHD}
 \def\RH{RH}
 \def\AH{AH}
-\def\Cardiff{Cardiff}
+\def\Cardiff{Cardiff Met}
 \def\TC{TC}
 %% bare_conf_compsoc.tex
 %% V1.4b
@@ -312,7 +312,7 @@
 
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
-\usepackage{url}
+\usepackage[hyphens]{url}
 % url.sty was written by Donald Arseneau. It provides better support for
 % handling and breaking URLs. url.sty is already installed on most LaTeX
 % systems. The latest version and documentation can be obtained at:
@@ -342,9 +342,12 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 \iffalse
-A few years ago I was in Bath for an HEA meeting presenting the "programming and discrete mathematics" course for first-year undergraduate, which I found a great idea.
-We're a planning to start a similar course next year in Reading and we are now deciding the content.
-May I ask you if I can have some syllabus or lecture notes to have some more precise idea of what is done in Bath?
+A few years ago I was in Bath for an HEA meeting presenting the
+"programming and discrete mathematics" course for first-year
+undergraduate, which I found a great idea.  We're a planning to start
+a similar course next year in Reading and we are now deciding the
+content.  May I ask you if I can have some syllabus or lecture notes
+to have some more precise idea of what is done in Bath?
 \fi
 \title{Innovative Pedagogical Practices in the Craft of Computing}
 
@@ -357,20 +360,20 @@ May I ask you if I can have some syllabus or lecture notes to have some more pre
 Alan Hayes,
 Rachid Hourizi
 \IEEEauthorblockA{\\
-Department of Computer Science, 
+Department of Computer Science\\
 University of Bath\\
 Bath BA2 7AY,
-United Kingdom
+UK
 \\
 %Email: Initials.Surname@bath.ac.uk\\
 Email: \{J.H.Davenport,A.Hayes,R.Hourizi\}@bath.ac.uk}}
 \and
 \IEEEauthorblockN{Tom Crick}
 \IEEEauthorblockA{\\
-Department of Computing and Information Systems\\
+Department of Computing \& Information Systems\\
 Cardiff Metropolitan University \\
-Western Avenue, Cardiff CF5 2YB, United Kingdom\\
-Email: tcrick@cardiffmet.ac.uk
+Cardiff CF5 2YB, UK\\
+Email: \url{tcrick@cardiffmet.ac.uk}
 \\
 }}
 
@@ -446,30 +449,128 @@ indeed lecturees? What are the implications for the journeymen?
 
 \section{Introduction: Problems and Contexts}
 % no \IEEEPARstart
-Computer programming, the art of actually instructing a computer to do what one wants, is fundamentally a practical skill. How does one teach this practical skill in a university setting, to students who may not be initially motivated to acquire it, and who may have a variety of past experience, or none at all? How does one ensure that they progress to the rest of their studies with a firm background in programming, so that programming difficulties do not impede their other learning? Here experienced teachers from two different U.K. institutions describe how they have addressed these challenges. Above all, the key is to recognise that programming is a practical subject, and needs to be taught and assessed as such. A model we use is that of `apprenticeship' \cite{Viha}, where the students learn how to do by seeing it done, and by being guided in their doing. \Bath{} is a ``top of the pile'' institution, recruiting able students to both Mathematics and Computing degrees, but in neither case will they, in the current state of the U.K. curricula, have necessarily encountered any programming before entering university~\cite{brown-et-al-toce2014}. \Cardiff{} offers degrees in computing, software engineering and business information systems to a broad range of students from diverse educational backgrounds. This paper focuses on \Bath{}, but the same general techniques have been applied in \Cardiff{}, to good effect there also. Hence the authors believe that their practice is worth disseminating.
+Computer programming, the art of actually instructing a computer to do
+what one wants, is fundamentally a practical skill. How does one teach
+this practical skill in a university setting, to students who may not
+be initially motivated to acquire it, and who may have a variety of
+past experience, or none at all? How does one ensure that they
+progress to the rest of their studies with a firm background in
+programming, so that programming difficulties do not impede their
+other learning? Here experienced teachers from two different
+UK institutions describe how they have addressed these
+challenges. Above all, the key is to recognise that programming is a
+practical subject, and needs to be taught and assessed as such. A
+model we use is that of `apprenticeship' \cite{Viha}, where the
+students learn how to do by seeing it done, and by being guided in
+their doing. \Bath{} is a ``top of the pile'' institution, recruiting
+able students to both Mathematics and Computing degrees, but in
+neither case will they, in the current state of the UK curricula,
+have necessarily encountered any programming before entering
+university~\cite{brown-et-al-sigcse2013}. \Cardiff{} offers degrees in
+computing, software engineering and business information systems to a
+broad range of students from diverse educational backgrounds. This
+paper focuses on \Bath{}, but the same general techniques have been
+applied in \Cardiff{}, to good effect there also. Hence the authors
+believe that their practice is worth disseminating.
 
-At \Bath, \JHD{} teaches programming to 330 Mathematics students (\Bath-M) in an innovative course \cite{XX}, while \RH{} teaches programming far more intensively to 120 Computer Science students (\Bath-C). JHD has used this approach, refining it over the years, since the course started in 2009, while RH has been adopting parts of  it as his course has grown from 70 to 120.
+At \Bath, \JHD{} teaches programming to 330 Mathematics students
+(\Bath-M) in an innovative course \cite{XX}, while \RH{} teaches
+programming far more intensively to 120 Computer Science students
+(\Bath-C). JHD has used this approach, refining it over the years,
+since the course started in 2009, while RH has been adopting parts of
+it as his course has grown from 70 to 120.
 
 \section{Programming Apprentices}
-Programming is a hard craft to master and its teaching is challenging. An apprentice model, where students learn their craft from a master is an approach that can lead to improved student engagement \cite{Astrachan,Viha}. Although traditionally applied to physical and vocational skills, the apprenticeship model can also be applied to the acquisition of cognitive skills such as those required for programming. In this context, the master is required to focus on the programming process and demonstrates it through writing, debugging and running `live' programs. This takes place whilst being observed by the student cohort. Scaffolding is provided through the provision of regular practical exercises with good quality formative feedback.
+Programming is a hard craft to master and its teaching is
+challenging. An apprentice model, where students learn their craft
+from a master is an approach that can lead to improved student
+engagement \cite{Astrachan,Viha}. Although traditionally applied to
+physical and vocational skills, the apprenticeship model can also be
+applied to the acquisition of cognitive skills such as those required
+for programming. In this context, the master is required to focus on
+the programming process and demonstrates it through writing, debugging
+and running `live' programs. This takes place whilst being observed by
+the student cohort. Scaffolding is provided through the provision of
+regular practical exercises with good quality formative feedback.
 
-This model is related to, but different from, the `lab-first' approach discussed in \cite{Hazzan}. Their own analysis (section 8.3) is worth considering. ``The lab-first approach has both advantages and disadvantages. On the one hand, in the spirit of constructivism, its main advantage is expressed by the active experience learners get in the computer lab, which in turn, establishes foundations based on which learners construct their mental image of the said topic; on the other hand, the lab-first teaching approach involves some insecurity feelings expressed both by the computer science teacher and the learners.'' In our case, insecurity among the learners is a real concern, and manifests itself very clearly among students who can arrive without any previous experience of programming and then find themselves in labs with relatively advanced programmers or miss the first two weeks of term and then start the course and its labs at a disadvantage. These late starters find their relative lack of experience daunting, despite the support provided by videos of past sessions.
-Constructivists interpret student learning as the development of personalised knowledge frameworks that are continually refined. According to this theory, to learn, a student must actively construct knowledge, rather than simply absorbing it from textbooks and lectures \cite{Meyer}.  Students develop their own self-constructed rules, or ``alternative frameworks'' \cite{BenAri}. For example, in programming, these alternative frameworks ``naturally occur as part of the transfer and linking process'' \cite{Clancy}; they represent the prior knowledge essential to the construction of new knowledge. When learning, the student modifies or expands his or her framework in order to incorporate new knowledge. We have also had an interest in threshold concepts \cite{Land,Meyer} --- as a subset of the core concepts in a discipline --- for computing, and more specifically, programming \cite{Khalife}. These are the building blocks that must be understood; in addition, they must be:
+This model is related to, but different from, the `lab-first' approach
+discussed in \cite{Hazzan}. Their own analysis (section 8.3) is worth
+considering: ``{\emph{The lab-first approach has both advantages and
+disadvantages. On the one hand, in the spirit of constructivism, its
+main advantage is expressed by the active experience learners get in
+the computer lab, which in turn, establishes foundations based on
+which learners construct their mental image of the said topic; on the
+other hand, the lab-first teaching approach involves some insecurity
+feelings expressed both by the computer science teacher and the
+learners.}}'' In our case, insecurity among the learners is a real
+concern, and manifests itself very clearly among students who can
+arrive without any previous experience of programming and then find
+themselves in labs with relatively advanced programmers or miss the
+first two weeks of term and then start the course and its labs at a
+disadvantage. These late starters find their relative lack of
+experience daunting, despite the support provided by videos of past
+sessions.  Constructivists interpret student learning as the
+development of personalised knowledge frameworks that are continually
+refined. According to this theory, to learn, a student must actively
+construct knowledge, rather than simply absorbing it from textbooks
+and lectures \cite{Meyer}.  Students develop their own
+self-constructed rules, or ``alternative frameworks''
+\cite{BenAri}. For example, in programming, these alternative
+frameworks ``naturally occur as part of the transfer and linking
+process'' \cite{Clancy}; they represent the prior knowledge essential
+to the construction of new knowledge. When learning, the student
+modifies or expands his or her framework in order to incorporate new
+knowledge. We have also had an interest in threshold concepts
+\cite{Land,Meyer} --- as a subset of the core concepts in a discipline
+--- for computing, and more specifically, programming
+\cite{Khalife}. These are the building blocks that must be understood;
+in addition, they must be:
+
 \begin{itemize}
-	\item	Transformative: they change the way a student looks at things in the discipline;
-	\item	Integrative: they tie together concepts in ways that were previously unknown to the student;
-	\item	Irreversible: they are difficult for the student to un-learn;
-	\item	Potentially troublesome for students: they are conceptually difficult, alien, and/or counter-intuitive;
-	\item	Often boundary markers: they indicate the limits of a conceptual area or the discipline itself.
+	\item	{\emph{Transformative:}} they change the way a student looks at things in the discipline;
+	\item	{\emph{Integrative:}} they tie together concepts in ways that were previously unknown to the student;
+	\item	{\emph{Irreversible:}} they are difficult for the student to un-learn;
+	\item	{\emph{Potentially troublesome for students:}} they are conceptually difficult, alien, and/or counter-intuitive;
+	\item	{\emph{Often boundary markers:}} they indicate the limits of a conceptual area or the discipline itself.
 \end{itemize}
-Students who have mastered these threshold concepts, however, have, at least in part, ``crossed over from being outsiders to belonging to the field they are studying'' \cite{Eckerdal}, although there is some dispute on how they apply to computer science \cite{Boustedt}.
- Our interest in these transformations, integrations, potentially troublesome challenges and boundaries informs the structure of the programming courses at both \Bath{} and \Cardiff, the work we expect from our students and the help that we require from our course tutors (the journeymen in our apprenticeship model). We introduce our approach to these areas in this short practice paper and will expand upon each one in future work.
+
+Students who have mastered these threshold concepts, however, have, at
+least in part, ``crossed over from being outsiders to belonging to the
+field they are studying'' \cite{Eckerdal}, although there is some
+dispute on how they apply to computer science \cite{Boustedt}.  Our
+interest in these transformations, integrations, potentially
+troublesome challenges and boundaries informs the structure of the
+programming courses at both \Bath{} and \Cardiff, the work we expect
+from our students and the help that we require from our course tutors
+(the journeymen in our apprenticeship model). We introduce our
+approach to these areas in this short practice paper and will expand
+upon each one in future work.
 
 \section{Course Structure and Assessment}
-At both \Bath{} and \Cardiff{}, we encourage our programming apprentices to develop an interdisciplinary mindset and transferability of skills: We view programming as sharing with mathematical thinking in the ways in which we might approach solving a problem; with engineering thinking in ways of designing and evaluating a large, complex systems and with scientific thinking in ways of understanding computability, intelligence, the mind and human behaviour. All of these are fundamental aims of our undergraduate degree programmes.
- More specifically, we explicitly try and develop higher-level computational thinking and problem solving skills before a significant focus on syntactic and semantic programming structures. Whilst this abstraction can be conceptually difficult for many students transitioning from secondary education through to university, our courses provide an opportunity to embed this at the start of their degree, intersecting across a number of the key anchor modules.
- The wide range of experience amongst our students at the point of entry into our programming course means that each of them experiences these transitions differently. Though each individual can be considered a programming apprentice, they encounter the irreversible transformations and moments of conceptual integration at different moments and struggle to different extents with the integration of scientific, engineering and mathematical thinking.
-These disparities of experience and pace of transformation have direct impact on the ways that we structure our courses.
+At both \Bath{} and \Cardiff{}, we encourage our programming
+apprentices to develop an interdisciplinary mindset and
+transferability of skills: we view programming as sharing with
+mathematical thinking in the ways in which we might approach solving a
+problem; with engineering thinking in ways of designing and evaluating
+a large, complex systems and with scientific thinking in ways of
+understanding computability, intelligence, the mind and human
+behaviour. All of these are fundamental aims of our undergraduate
+degree programmes.  Thus, more specifically, we explicitly try and develop
+higher-level computational thinking and problem solving skills before
+a significant focus on syntactic and semantic programming
+structures. Whilst this abstraction can be conceptually difficult for
+many students transitioning from secondary education through to
+university, our courses provide an opportunity to embed this at the
+start of their degree, intersecting across a number of the key anchor
+modules.  The wide range of experience amongst our students at the
+point of entry into our programming course means that each of them
+experiences these transitions differently. Though each individual can
+be considered a programming apprentice, they encounter the
+irreversible transformations and moments of conceptual integration at
+different moments and struggle to different extents with the
+integration of scientific, engineering and mathematical thinking.
+These disparities of experience and pace of transformation have direct
+impact on the ways that we structure our courses.
 
 %\subsection{\Cardiff}
 %\subsection{\Bath}
@@ -483,6 +584,7 @@ Having taught programming at both the ``normal'' (at least for \Bath) rate of tw
 Another strategic decision in strong alignment with the apprenticeship model is the assessment method for the course. \BathC{} has a fairly traditional view: 1/6 on weekly exercise sheets, 1/3 on major coursework and 1/2 on the written exam. The high-level view of the assessment in \BathM{} is also ``50\% examination, 50\% coursework''. The detailed breakdown is slightly more subtle: the mathematics component is 38\% examination and 12\% class test (with computers), while the programming component is 38\% coursework and 12\% examination. As of writing (November 2015) the course team is considering changes to the detailed breakdown, but the 50:50 split will remain.
 It is worthwhile considering the Learning Outcomes of the module (from the Catalogue, our numbering):
 After taking this unit, the student should be able to:
+{\emph{
 \begin{enumerate}
 \item   Apply the basic principles of programming in studying problems in discrete mathematics.
 \item   Make proper use of data structures in the applications context.
@@ -490,9 +592,9 @@ After taking this unit, the student should be able to:
 \item   Analyse the complexity of simple algorithms.
 \item   Explain the use of some famous algorithms such as the Fast Fourier Transform.
 \item   Use the MATLAB programming environment.
- \end{enumerate}
+ \end{enumerate}}}
 
- Items 1, 2 and 6 are directly practical skills whilst items 3, 4 and 5 reflect the (complementary) theoretical aims of the course. Our interest in the former (the practical application of programming skills) leads to the 50\% coursework assessment mentioned above, and relates to \JHD's opening statement to the course: ``My aim is to show you how to program, my and the laboratory tutors' aim is to help you with your programming, and your aim ought to be to learn programming by doing it''. \JHD{} has used this statement since 2009, but, since encountering \cite{Viha} he has realised that this is really an apprenticeship model, with the students as apprentices, the tutors as journeymen, and the lecturer as the master craftsman. There is a strong emphasis on ``learning by doing''. For example, in the first lecture \JHD{} writes in front of them (and definitely does not produce a pre-written one out of the hat) a recursive factorial program, and the first exercise is to adapt this into a Fibonacci number program. In fact, this ``writing'' process is iterative.
+ Items 1, 2 and 6 are directly practical skills whilst items 3, 4 and 5 reflect the (complementary) theoretical aims of the course. Our interest in the former (the practical application of programming skills) leads to the 50\% coursework assessment mentioned above, and relates to \JHD's opening statement to the course: ``{\emph{My aim is to show you how to program, my and the laboratory tutors' aim is to help you with your programming, and your aim ought to be to learn programming by doing it}}''. \JHD{} has used this statement since 2009, but, since encountering \cite{Viha} he has realised that this is really an apprenticeship model, with the students as apprentices, the tutors as journeymen, and the lecturer as the master craftsman. There is a strong emphasis on ``learning by doing''. For example, in the first lecture \JHD{} writes in front of them (and definitely does not produce a pre-written one out of the hat) a recursive factorial program, and the first exercise is to adapt this into a Fibonacci number program. In fact, this ``writing'' process is iterative.
 
  The laboratory sessions take place in five one-hour sessions at the end of the week (after the lectures and formal problem classes). They are held in 75-seater laboratories (arranged as five rows of 15 machines each), and the students are allocated to a specific row of 15 within that. Similarly, there are five tutors, each assigned to a specific row. Ideally, the same tutor stays with the same group of 15 all year. This firm allocation of students to tutors, and the briefing to tutors that they are responsible for the learning of their allocated students, means that tutors do occasionally raise concerns about specific students with me in a way that tutors in a floating pool would not. The allocation of students to specific tutors allows the latter to develop a deeper understanding of the experience that former bring to the course. It also allows tutors to anticipate the degree to which early lab exercises present a substantial challenge to individual students and adapt the assistance they provide accordingly.
  
@@ -547,19 +649,37 @@ We also have the following general suggestions.
 	\item	Find a way (the \BathM{} way is only one option, and \BathC{} uses a more traditional way) of ensuring weekly exercises are taken seriously by the students; engagement is key, especially for the apprenticeship model to work. This means that the exercises require rapid turnround, ideally automated marking.
 	\item	Since the aim is to teach the craft of programming, the lecturer should demonstrate programming, rather than just talk about pre-written programs; furthermore, they should emphasise that their solution is one of perhaps a number of `correct' solutions, but may not be the optimal solution.
 	\item	The choice of programming language should suit the audience and the pedagogic goals, not some pre-defined idea of a `good' language; be wary of jumping to new (and potentially faddish) languages, tools and environments.
-	\item	Develop (and emphasise) computational thinking skills from the start, linking theoretical skills and understanding to real-world problem solving. A wide range of resources [\url{https://www.google.com/edu/resources/programs/exploring-computational-thinking}] already exists that can be easily adapted and adopted.
+	\item	Develop (and emphasise) computational thinking skills from the start, linking theoretical skills and understanding to real-world problem solving. A wide range of resources [\url{https://goo.gl/dZ6vyj}] already exists that can be easily adapted and adopted.
 	\item	The value of developing a culture around (and appreciation of) software carpentry and codemanship: essentially, creating useful and usable software artefacts.
 %\item	The importance of long-term industry engagement, from industry advisory boards, through to invited “tech talks”, internships, sandwich placements and graduate positions.
 %\item	The value of engaging with organisations such as the Software Sustainability Institute, Software Carpentry and Data Carpentry -- the huge wealth of resource and experiences, as well as linking research and learning \& teaching.
 %\item	Have a strategic plan for developing these topics in future undergraduate and postgraduate programme development and periodic reviews, alongside the wider context of developing academic skills, graduate attributes, employability and entrepreneurial skills.
 \end{itemize} 
 
-This paper has focused on the teaching of introductory programming as a craft skill, to be taught via an apprentice model, with further aims of fostering a culture of software carpentry and codemanship: developing useful and usable software artefacts. Teaching it this way has substantial advantages in terms of student engagement, participation and increased retention. There are other craft skills in computing (for example, database design, advanced object-oriented programming, etc.) which could easily benefit from the same approach.
+This paper has focused on the teaching of introductory programming as
+a craft skill, to be taught via an apprentice model, with further long
+term aims of fostering a culture of software carpentry and
+codemanship: developing useful and usable software artefacts. Teaching
+it this way has substantial advantages in terms of student engagement,
+participation and increased retention. There are other craft skills in
+computing (for example, database design, advanced object-oriented
+programming, etc.) which could easily benefit from the same approach.
+
 \section{Conclusion}
  
-We have seen -- and will to continue to see -- significant changes to computer science education in the UK, from primary school through to FE and HE~\cite{brown-et-al-toce2014}. From reform of the computing curriculum in England, scaling and CPD challenges in Scotland, as well as expected future reform in Wales and Northern Ireland, the curriculum and qualifications landscape will most likely increase the diversity of qualifications and experiences of entrants to HE in the short and medium term. A renewed focus on pedagogy for teaching 
+We have seen -- and will to continue to see -- significant changes to
+computer science education in the UK, from primary school through to
+FE and HE~\cite{brown-et-al-toce2014}. From reform of the computing
+curriculum in England, scaling and CPD challenges in Scotland, as well
+as expected future reform in Wales and Northern Ireland, the
+curriculum and qualifications landscape will most likely increase the
+diversity of qualifications and experiences of entrants to HE in the
+short and medium term. A renewed focus on pedagogy for teaching
 computer science and programming should be embraced; for example, the
-formation of the UK Forum for Computing Education [\url{http://ukforce.org.uk}], led by the Royal Academy of Engineering and supported by BCS, The Chartered Institute for IT, is a positive step to bring together key stakeholders in the UK.
+formation of the UK Forum for Computing Education
+[\url{http://ukforce.org.uk}], led by the Royal Academy of Engineering
+and supported by BCS, The Chartered Institute for IT, is a positive
+step to bring together key stakeholders in the UK.
  
 Furthermore, as a discipline, we are currently in the midst of
 significant scrutiny, from both an educational, economic and policy
@@ -568,19 +688,31 @@ opportunity to raise the profile and wider public perception of the
 discipline as an educational and economically valuable pursuit versus
 being driven to support the immediate and somewhat transient demands
 on the technology sectors. Recent and ongoing reviews that will have
-an impact on our discipline include: the aforementioned Shadbolt and
+an impact on our discipline include: the Shadbolt and
 Wakeham reviews of computer science and STEM graduate employability
 (as well as degree accreditation); the new UK QAA Subject Benchmark
-Statement for Computing to be published in late 2015; the 2014 UK
+Statement for Computing to be published in early 2016; the 2014 UK
 Digital Skills Taskforce report [\url{http://www.ukdigitalskills.com}]
-(``{\emph{Digital Skills for Tomorrow's World}}''), the recent UK
+(``{\emph{Digital Skills for Tomorrow's World}}''), the 2015 UK
 House of Lords Select Committee on Digital Skills' report
 [\url{http://www.parliament.uk/digital-skills-committee}]
 (``{\emph{Make or Break: The UK's Digital Future}}''), as well as
 emergent effects from the recent or upcoming changes to the computing
 curricula across the four nations of the UK.
  
-Finally, we acknowledge the impact of the application of computational techniques across science and engineering and how this has fundamentally affected practices within those disciplines \cite{Crick}. Computing is both a rigorous academic discipline in its own right and also facilitates and supports a wide range of other disciplines, from computational physics to computational social science; in essence it has become a bridge for interdisciplinarity: it now does not only support how science is done, but what science is done \cite{RS}. Therefore, aspects from this report (and from across computer science) could also be applied to a number of STEM disciplines that now need to teach introductory programming (and how to leverage data and computation to solve domain problems) in their undergraduate curricula.
+Finally, we acknowledge the impact of the application of computational
+techniques across science and engineering and how this has
+fundamentally affected practices within those disciplines. Computing
+is both a rigorous academic discipline in its own right and also
+facilitates and supports a wide range of other disciplines, from
+computational physics to computational social science; in essence it
+has become a bridge for interdisciplinarity: it now does not only
+support how science is done, but what science is done
+\cite{RS}. Therefore, aspects from this report (and from across
+computer science) could also be applied to a number of STEM
+disciplines that now need to teach introductory programming (and how
+to leverage data and computation to solve domain problems) in their
+undergraduate curricula.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -689,7 +821,8 @@ Finally, we acknowledge the impact of the application of computational technique
 
 
 The authors would like to thank all the tutors who have contributed to
-the development of these courses: in many ways they are the real teachers.
+the development of these courses at both \Bath{} and \Cardiff{}: in
+many ways they are the real teachers.
 
 
 
@@ -728,16 +861,18 @@ Ben-Ari, M., `Constructivism in Computer Science Education', J. Computers in Mat
   `Threshold Concepts in Computer Science: Do They Exist and Are They
   Useful?', Proc. 38th SIGCSE Technical Symposium on Computer Science
   Education (SIGCSE'07), ACM Press, pp. 504--508.
+\bibitem{brown-et-al-sigcse2013}
+Brown, N.C.C., K\"{o}lling, M., Crick, T., {Peyton Jones}, S., Humphreys,
+S., and Sentance, S. ``{Bringing Computer Science Back Into Schools: Lessons
+  from the UK},'', Proc. 44th ACM Technical Symposium on Computer
+Science Education (SIGCSE'13), ACM Press, pp. 269--274.
 \bibitem{brown-et-al-toce2014}
-Brown, N., Sentance, S., Crick, T., and Humphreys, S. ``{Restart: The Resurgence
+Brown, N.C.C., Sentance, S., Crick, T., and Humphreys, S. ``{Restart: The Resurgence
   of Computer Science in UK Schools},'' \emph{{ACM TOCE}} 14(2), pp.
   1--22, 2014.
 \bibitem{Clancy}Clancy, M., Computer Science Education Research,
   Routledge, chapter Misconceptions and Attitudes that Interfere with
   Learning to Program, pp. 85--100, 2004.
-\bibitem{Crick}Crick, T., `Computing: Supporting Excellence in STEM', 
-Proc. Higher Education Academy STEM Annual Conference: Aiming for
-Excellence in STEM Learning and Teaching, HEA Press, 2012.
 \bibitem{XX}Davenport, J.H., Wilson, D., Graham, I., Sankaran, G., Spence, A., Blake, J. and Kynaston, S.,
 Interdisciplinary Teaching of Computing to Mathematics Students:
 Programming and Discrete Mathematics.
