@@ -1,0 +1,913 @@
+\def\Bath{Bath}
+\def\BathM{Bath--M}   % XX10190?
+\def\BathC{Bath--C}   % CM??????
+\def\JHD{JHD}
+\def\RH{RH}
+\def\AH{AH}
+\def\Cardiff{Cardiff Met}
+\def\TC{TC}
+%% bare_conf_compsoc.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference,compsoc]{IEEEtran}
+% Some/most Computer Society conferences require the compsoc mode option,
+% but others may want the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference,compsoc]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+\usepackage{enumitem}
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage[hyphens]{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\iffalse
+A few years ago I was in Bath for an HEA meeting presenting the
+"programming and discrete mathematics" course for first-year
+undergraduate, which I found a great idea.  We're a planning to start
+a similar course next year in Reading and we are now deciding the
+content.  May I ask you if I can have some syllabus or lecture notes
+to have some more precise idea of what is done in Bath?
+\fi
+\title{Innovative Pedagogical Practices in the Craft of Computing}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{James H. Davenport,
+%Tom Crick,
+Alan Hayes,
+Rachid Hourizi
+\IEEEauthorblockA{\\
+Department of Computer Science\\
+University of Bath\\
+Bath BA2 7AY,
+UK
+\\
+%Email: Initials.Surname@bath.ac.uk\\
+Email: \{J.H.Davenport,A.Hayes,R.Hourizi\}@bath.ac.uk}}
+\and
+\IEEEauthorblockN{Tom Crick}
+\IEEEauthorblockA{\\
+Department of Computing \& Information Systems\\
+Cardiff Metropolitan University \\
+Cardiff CF5 2YB, UK\\
+Email: \url{tcrick@cardiffmet.ac.uk}
+\\
+}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page (and note that there is less available width in this regard for
+% compsoc conferences compared to traditional conferences), use this
+% alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Teaching programming is much more like teaching a craft skill
+than it is a purely theoretical subject. Hence an ``apprenticeship'' model,
+where apprentices learn by watching the master do, and then do
+themselves, and are criticised in their doing, is, we claim, more
+appropriate than the ``lecturer/lecturee'' model that universities
+implicitly adopt. Furthermore, there are generally many more
+apprentices than the master can personally supervise. Universities
+will therefore use various tutors, who should be regarded as the
+analogue of the guild-master's journeymen. However, how does one
+encourage this mindset in students who, for their other courses, are
+indeed lecturees? What are the implications for the journeymen?
+\end{abstract}
+
+%Keywords: programming, apprentice model
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction: Problems and Contexts}
+% no \IEEEPARstart
+Computer programming, the art of actually instructing a computer to do
+what one wants, is fundamentally a practical skill. How does one teach
+this practical skill in a university setting, to students who may not
+be initially motivated to acquire it, and who may have a variety of
+past experience, or none at all? How does one ensure that they
+progress to the rest of their studies with a firm background in
+programming, so that programming difficulties do not impede their
+other learning? Here experienced teachers from two different
+UK institutions describe how they have addressed these
+challenges. Above all, the key is to recognise that programming is a
+practical subject, and needs to be taught and assessed as such. A
+model we use is that of `apprenticeship' \cite{Viha}, where the
+students learn how to do by seeing it done, and by being guided in
+their doing. \Bath{} is a ``top of the pile'' institution, recruiting
+able students to both Mathematics and Computing degrees, but in
+neither case will they, in the current state of the UK curricula,
+have necessarily encountered any programming before entering
+university~\cite{brown-et-al-sigcse2013}. \Cardiff{} offers degrees in
+computing, software engineering and business information systems to a
+broad range of students from diverse educational backgrounds. This
+paper focuses on \Bath{}, but the same general techniques have been
+applied in \Cardiff{}, to good effect there also. Hence the authors
+believe that their practice is worth disseminating.
+
+At \Bath, \JHD{} teaches programming to 330 Mathematics students
+(\Bath-M) in an innovative course \cite{XX}, while \RH{} teaches
+programming far more intensively to 120 Computer Science students
+(\Bath-C). JHD has used this approach, refining it over the years,
+since the course started in 2009, while RH has been adopting parts of
+it as his course has grown from 70 to 120.
+
+\section{Programming Apprentices}
+Programming is a hard craft to master and its teaching is
+challenging. An apprentice model, where students learn their craft
+from a master is an approach that can lead to improved student
+engagement \cite{Astrachan,Viha}. Although traditionally applied to
+physical and vocational skills, the apprenticeship model can also be
+applied to the acquisition of cognitive skills such as those required
+for programming. In this context, the master is required to focus on
+the programming process and demonstrates it through writing, debugging
+and running `live' programs. This takes place whilst being observed by
+the student cohort. Scaffolding is provided through the provision of
+regular practical exercises with good quality formative feedback.
+
+This model is related to, but different from, the `lab-first' approach
+discussed in \cite{Hazzan}. Their own analysis (section 8.3) is worth
+considering: ``{\emph{The lab-first approach has both advantages and
+disadvantages. On the one hand, in the spirit of constructivism, its
+main advantage is expressed by the active experience learners get in
+the computer lab, which in turn, establishes foundations based on
+which learners construct their mental image of the said topic; on the
+other hand, the lab-first teaching approach involves some insecurity
+feelings expressed both by the computer science teacher and the
+learners.}}'' In our case, insecurity among the learners is a real
+concern, and manifests itself very clearly among students who can
+arrive without any previous experience of programming and then find
+themselves in labs with relatively advanced programmers or miss the
+first two weeks of term and then start the course and its labs at a
+disadvantage. These late starters find their relative lack of
+experience daunting, despite the support provided by videos of past
+sessions.  Constructivists interpret student learning as the
+development of personalised knowledge frameworks that are continually
+refined. According to this theory, to learn, a student must actively
+construct knowledge, rather than simply absorbing it from textbooks
+and lectures \cite{Meyer}.  Students develop their own
+self-constructed rules, or ``alternative frameworks''
+\cite{BenAri}. For example, in programming, these alternative
+frameworks ``naturally occur as part of the transfer and linking
+process'' \cite{Clancy}; they represent the prior knowledge essential
+to the construction of new knowledge. When learning, the student
+modifies or expands his or her framework in order to incorporate new
+knowledge. We have also had an interest in threshold concepts
+\cite{Land,Meyer} --- as a subset of the core concepts in a discipline
+--- for computing, and more specifically, programming
+\cite{Khalife}. These are the building blocks that must be understood;
+in addition, they must be:
+
+\begin{itemize}
+	\item	{\emph{Transformative:}} they change the way a student looks at things in the discipline;
+	\item	{\emph{Integrative:}} they tie together concepts in ways that were previously unknown to the student;
+	\item	{\emph{Irreversible:}} they are difficult for the student to un-learn;
+	\item	{\emph{Potentially troublesome for students:}} they are conceptually difficult, alien, and/or counter-intuitive;
+	\item	{\emph{Often boundary markers:}} they indicate the limits of a conceptual area or the discipline itself.
+\end{itemize}
+
+Students who have mastered these threshold concepts, however, have, at
+least in part, ``crossed over from being outsiders to belonging to the
+field they are studying'' \cite{Eckerdal}, although there is some
+dispute on how they apply to computer science \cite{Boustedt}.  Our
+interest in these transformations, integrations, potentially
+troublesome challenges and boundaries informs the structure of the
+programming courses at both \Bath{} and \Cardiff, the work we expect
+from our students and the help that we require from our course tutors
+(the journeymen in our apprenticeship model). We introduce our
+approach to these areas in this short practice paper and will expand
+upon each one in future work.
+
+\section{Course Structure and Assessment}
+At both \Bath{} and \Cardiff{}, we encourage our programming
+apprentices to develop an interdisciplinary mindset and
+transferability of skills: we view programming as sharing with
+mathematical thinking in the ways in which we might approach solving a
+problem; with engineering thinking in ways of designing and evaluating
+a large, complex systems and with scientific thinking in ways of
+understanding computability, intelligence, the mind and human
+behaviour. All of these are fundamental aims of our undergraduate
+degree programmes.  Thus, more specifically, we explicitly try and develop
+higher-level computational thinking and problem solving skills before
+a significant focus on syntactic and semantic programming
+structures. Whilst this abstraction can be conceptually difficult for
+many students transitioning from secondary education through to
+university, our courses provide an opportunity to embed this at the
+start of their degree, intersecting across a number of the key anchor
+modules.  The wide range of experience amongst our students at the
+point of entry into our programming course means that each of them
+experiences these transitions differently. Though each individual can
+be considered a programming apprentice, they encounter the
+irreversible transformations and moments of conceptual integration at
+different moments and struggle to different extents with the
+integration of scientific, engineering and mathematical thinking.
+These disparities of experience and pace of transformation have direct
+impact on the ways that we structure our courses.
+
+%\subsection{\Cardiff}
+%\subsection{\Bath}
+%At Bath, we share parallel interests. 
+At \Bath, we  teach programming as a practical apprenticeship, combining hands-on application with a strong theoretical underpinning. 
+In  the  light of this twin focus, \BathM's programming is taught as a concurrent half of an all-year module, resourced as an extremely hands-on unit i.e. with every student getting one hour of \emph{supervised} laboratory time per week. This actually meant that there was twice as much practical time in all as in the previous regime of all of a one-semester module. 
+%In light of this twin focus, the programming courses taught in the Department of Mathematical Sciences and, after an internal reorganisation, the Department of Computer Science have been resourced as extremely hands-on units i.e. with every student getting at least one hour of \emph{supervised} laboratory time per week. This actually meant that there was twice as much practical time in all as in the previous regime. 
+Having taught programming at both the ``normal'' (at least for \Bath) rate of two hours of lectures and one of laboratory and at this ``parity'' rate of one hour of programming lecture and one hour of laboratory per week, \JHD{} is convinced that the parity rate is more effective.
+ By way of comparison, \BathC, where Programming is a double  (24 CAT/12 ECTS credits) module, provides three hours of lectures and two of laboratories/week: essentially a halfway house.
+
+Another strategic decision in strong alignment with the apprenticeship model is the assessment method for the course. \BathC{} has a fairly traditional view: 1/6 on weekly exercise sheets, 1/3 on major coursework and 1/2 on the written exam. The high-level view of the assessment in \BathM{} is also ``50\% examination, 50\% coursework''. The detailed breakdown is slightly more subtle: the mathematics component is 38\% examination and 12\% class test (with computers), while the programming component is 38\% coursework and 12\% examination. As of writing (November 2015) the course team is considering changes to the detailed breakdown, but the 50:50 split will remain.
+It is worthwhile considering the Learning Outcomes of the module (from the Catalogue, our numbering):
+After taking this unit, the student should be able to:
+{\emph{
+\begin{enumerate}
+\item   Apply the basic principles of programming in studying problems in discrete mathematics.
+\item   Make proper use of data structures in the applications context.
+\item   Demonstrate understanding of a range of mathematical topics which relate to computation, such as modular arithmetic, elementary graph theory and elementary computational number theory and their applications.
+\item   Analyse the complexity of simple algorithms.
+\item   Explain the use of some famous algorithms such as the Fast Fourier Transform.
+\item   Use the MATLAB programming environment.
+ \end{enumerate}}}
+
+ Items 1, 2 and 6 are directly practical skills whilst items 3, 4 and 5 reflect the (complementary) theoretical aims of the course. Our interest in the former (the practical application of programming skills) leads to the 50\% coursework assessment mentioned above, and relates to \JHD's opening statement to the course: ``{\emph{My aim is to show you how to program, my and the laboratory tutors' aim is to help you with your programming, and your aim ought to be to learn programming by doing it}}''. \JHD{} has used this statement since 2009, but, since encountering \cite{Viha} he has realised that this is really an apprenticeship model, with the students as apprentices, the tutors as journeymen, and the lecturer as the master craftsman. There is a strong emphasis on ``learning by doing''. For example, in the first lecture \JHD{} writes in front of them (and definitely does not produce a pre-written one out of the hat) a recursive factorial program, and the first exercise is to adapt this into a Fibonacci number program. In fact, this ``writing'' process is iterative.
+
+ The laboratory sessions take place in five one-hour sessions at the end of the week (after the lectures and formal problem classes). They are held in 75-seater laboratories (arranged as five rows of 15 machines each), and the students are allocated to a specific row of 15 within that. Similarly, there are five tutors, each assigned to a specific row. Ideally, the same tutor stays with the same group of 15 all year. This firm allocation of students to tutors, and the briefing to tutors that they are responsible for the learning of their allocated students, means that tutors do occasionally raise concerns about specific students with me in a way that tutors in a floating pool would not. The allocation of students to specific tutors allows the latter to develop a deeper understanding of the experience that former bring to the course. It also allows tutors to anticipate the degree to which early lab exercises present a substantial challenge to individual students and adapt the assistance they provide accordingly.
+ 
+It has been the authors' gut feeling for many years that weekly practice, and frequent assessment, are important in getting students into the habit of programming. This has recently been borne out by \cite{Willman}, who state ``Students with high absolute submission counts during tutorials tend to significantly more often get a good grade from the course than those who have low absolute submission counts.''
+
+\section{Student Engagement}
+Beyond our interest in the provision of sufficient opportunity for hands on coding, however, we have also worked to foster student engagement with our practical/theoretical apprenticeship model. It is all very well having weekly laboratory sessions, and exercises: how, in a university context, does one make students use them? \Bath-C{} assigns marks for them (1/6 of the total).
+In \Bath-M, where there are no actual marks, the answer is that, in the weeks where there is no formal coursework being done, and especially in the first few weeks, we still set formative weekly exercises. These are graded pass/fail, and are known as `Tickables', since the laboratory tutor ticks them in the course of each laboratory session. The tutors are instructed that a certain amount of `coaching' is permissible here (where it would not be in assessed coursework) and that one of the aims, again particularly in the first weeks, is to instil confidence in the students.
+These exercises are sequential, building both on the lectures and on previous ones. The first Tickable builds on the factorial program written in lectures (as shown above), and asks the students, based on the lecturer's program (which is supplied in the Learning Environment after the lecture), to write a Fibonacci number program, i.e. $F(n)=F(n-1)+F(n-2)$ with suitable base conditions. The students are also asked to reason about the running time of this program, which builds on the discrete mathematics component of the course. The second Tickable extends this to the matrix formulation, and so on. Each subsequent week, the students can build on their solution from the previous week, or on the lecturer's solution.
+Simple pass/fail marking by the tutor seems easy from the lecturer's point of view, but the experienced academic will ask about:
+\begin{itemize}
+\item appeals from the tutor's decision not to tick;
+\item the incentives for the students to do the work;
+\item illnesses and other absences, and requests for extensions, which get in the way of providing the solution in a timely manner for next week's Tickable.
+\end{itemize}
+The \BathM{} solution to these, potentially very important, questions are as follows:
+\begin{enumerate}
+\item \JHD{} attends all the laboratories for the first Tickable, and resolves any queries on the spot (also helping the new tutors and giving them confidence), possibly announcing any adjudications if this seems appropriate. Thereafter, over a period of six years with 250 students/year doing ten more Tickables each, there has not been a single appeal against the justice of ticking. (There are appeals against the misrecording of ticks, and the tutors can be fallible here, and forget to copy a hand-written record into the Virtual Learning Environment.)
+\item  The incentive is that, if the student does not get 80\% of the ticks (of which there are generally 15) for the course, then the assessed coursework mark is reduced pro rata. In practice this is a rare event, as nearly all students do get over 80\%, and those that undershoot do so drastically, fail the coursework anyway, and are generally those students who do not engage at all with the course. What does occasionally happen is that a student misses the first two laboratories (which the Ticking process will record), is reported to the Personal Tutor (the Department Office provides a list of Personal Tutors arranged by student computer username, which helps!) and then starts attending seriously, at which point the missing ticks are condoned.
+\item Minor illnesses and absences are explicitly (this is explained as part of the course briefing, and repeated when requests are made) allowed for by the 80\% rule, in that a student can miss three without penalty. More would indicate a more serious condition, which should be addressed programme-wide rather than just in this unit. One case that this does not cover is that of sport players who may miss several laboratories, but this is known in advance, and the rule is ``submit in advance to your tutor by e-mail''. In particular, no extensions are given for Tickables (unlike assessed coursework), and so the weekly rhythm of ``lecturer demonstrates; student work a similar example; lecturer shows his solution, uses it to lead into next demonstration'' is not disrupted.
+\end{enumerate}
+%B.	YYYYYY
+\section{Impact on Tutoring: Journeymen}
+%A.	XXXXXX
+Just as in a traditional craft, the journeymen have also to learn, and
+to be managed. \JHD{} saw the importance of this whilst at the
+University of Waterloo, Canada, where the programming lecturer was supported by an entire cast of ISAs (Instructional Support Assistants), IAs (Instructional Apprentices), ISC (Instructional Support Coordinator: essentially a full-time role recruiting and rostering the ISAs and IAs).
+The tutors at \Bath{} are generally PhD students from the two departments of Mathematical Sciences and Computer Science. One tutor in each department is formally designated as the Senior Tutor, with two sets of responsibilities:
+\begin{itemize}
+\item	to the lecturer: to inform them when things are going wrong, and to ensure that the lecturer is aware of generic difficulties;
+\item to the other tutors, to act as a less formal source of advice and support than going to the lecturer.
+\end{itemize}
+These two Senior Tutors, and other experienced tutors, are consulted by the lecturer about changes, and often used to test new assignments or exercises. It should be noted that three of the seven authors of \cite{XX} are/were Senior Tutors. \JHD{} is often asked by tutors to write references for their teaching abilities as they move on to other jobs, and gladly provide them. One tutor returned to a lecturing post in her native Thailand and occasionally asks \JHD{} questions of teaching practice, as well as using some of the ideas (such as the 80\% rule) in her own university.
+It is important to remember a simple piece of arithmetic: in a given week the lecturer delivers about 1.5 hours of teaching (lecture plus half a problem class), while the laboratory tutors deliver 25 between them. Hence time spent writing briefing material for the tutors is often at least as valuable as time spent preparing lectures. Every exercise is issued with some support material for the tutors: sometimes ``what to explain'' and sometimes ``what not to explain -- they have to figure that one out''. This is necessary to ensure a uniform experience across the 25 tutorial groups.
+On a more immediate level, we ensure that at least one, and generally two, of the five tutors in the lab for any hour are those who have done this tutoring in previous years. This is particularly important at the start of the year, when new tutors may not be that familiar with MATLAB, and have yet to learn to spot the baffling blunders that beginners and near-beginners can make.
+
+\section{Suggestions for Others}
+
+%While we have presented practice from two different institutions and departments, with different profiles and demographics, there is clearly shared ground, perspectives and common approaches to some of the problems presented. Invariably, these interventions will consist of a hybrid approach, addressing a combination of institution-specific challenges, but acknowledging the common approaches and best practices.
+As we have seen, there are significant benefits to the apprenticeship model and approach. This has been highlighted in both the \Bath{} and \Cardiff{} cases, across two different departments and discipline areas, but focusing on the teaching of introductory programming. The potential of early development of computational thinking and transferable problem solving skills is clear, as well as fostering a culture of software carpentry and codemanship: developing useful and usable software artefacts. While this is an under-explored area from a pedagogic research perspective, we have seen the benefits from multiple cohorts at the two institutions.
+Many large-scale programming classes will rely heavily on tutors. They form an important part of the students' learning experience. The following points have been found useful at \Bath, where we have large laboratories (efficient for timetabling, but harder to manage):
+\begin{itemize}
+\item	Assign students to tutors, rather than having a `floating pool'. We have certainly been helped here at Bath by having one large laboratory for 75=5*15, rather than smaller laboratories, as there can then be a mix of tutor experience in the room.
+\item	Brief the tutors on what they are expected to do, especially the role in helping (or not) students with weekly exercises versus the assessed coursework.
+\item	Active and engaged tutors are key: ideally they should not sit in labs waiting to be asked for help!
+\item	Debrief the tutors: they know far better than the lecturer what is actually going on in the laboratory classes and with the students, especially if the first point is followed.
+\item	Staff development of tutors is important, and pays off.
+\item Encourage students to help each other, such as peer support in labs (often but not always more advanced students helping those with less experience) and online, for example on Moodle or other virtual learning environment.
+\end{itemize} 
+We also have the following general suggestions.
+\begin{itemize}
+	\item	Find a way (the \BathM{} way is only one option, and \BathC{} uses a more traditional way) of ensuring weekly exercises are taken seriously by the students; engagement is key, especially for the apprenticeship model to work. This means that the exercises require rapid turnround, ideally automated marking. We note that increased automation was welcomed by the \BathC{} students (Staff-Student Liaison Committee 29 October 2015).
+	\item	Since the aim is to teach the craft of programming, the lecturer should demonstrate programming, rather than just talk about pre-written programs; furthermore, they should emphasise that their solution is one of perhaps a number of `correct' solutions, but may not be the optimal solution.
+	\item	The choice of programming language should suit the audience and the pedagogic goals, not some pre-defined idea of a `good' language; be wary of jumping to new (and potentially faddish) languages, tools and environments.
+	\item	Develop (and emphasise) computational thinking skills from the start, linking theoretical skills and understanding to real-world problem solving. A wide range of resources [\url{https://goo.gl/dZ6vyj}] already exists that can be easily adapted and adopted.
+	\item	The value of developing a culture around (and appreciation of) software carpentry and codemanship: essentially, creating useful and usable software artefacts.
+%\item	The importance of long-term industry engagement, from industry advisory boards, through to invited “tech talks”, internships, sandwich placements and graduate positions.
+%\item	The value of engaging with organisations such as the Software Sustainability Institute, Software Carpentry and Data Carpentry -- the huge wealth of resource and experiences, as well as linking research and learning \& teaching.
+%\item	Have a strategic plan for developing these topics in future undergraduate and postgraduate programme development and periodic reviews, alongside the wider context of developing academic skills, graduate attributes, employability and entrepreneurial skills.
+\end{itemize} 
+
+This paper has focused on the teaching of introductory programming as
+a craft skill, to be taught via an apprentice model, with further long
+term aims of fostering a culture of software carpentry and
+codemanship: developing useful and usable software artefacts. Teaching
+it this way has substantial advantages in terms of student engagement,
+participation and increased retention. There are other craft skills in
+computing (for example, database design, advanced object-oriented
+programming, etc.) which could easily benefit from the same approach.
+
+\section{Conclusion}
+ 
+We have seen -- and will to continue to see -- significant changes to
+computer science education in the UK, from primary school through to
+FE and HE~\cite{brown-et-al-toce2014}. From reform of the computing
+curriculum in England, scaling and CPD challenges in Scotland, as well
+as expected future reform in Wales and Northern Ireland, the
+curriculum and qualifications landscape will most likely increase the
+diversity of qualifications and experiences of entrants to HE in the
+short and medium term. A renewed focus on pedagogy for teaching
+computer science and programming should be embraced; for example, the
+formation of the UK Forum for Computing Education
+[\url{http://ukforce.org.uk}], led by the Royal Academy of Engineering
+and supported by BCS, The Chartered Institute for IT, is a positive
+step to bring together key stakeholders in the UK.
+ 
+Furthermore, as a discipline, we are currently in the midst of
+significant scrutiny, from both an educational, economic and policy
+perspective; this presents both opportunities and warnings: the
+opportunity to raise the profile and wider public perception of the
+discipline as an educational and economically valuable pursuit versus
+being driven to support the immediate and somewhat transient demands
+on the technology sectors. Recent and ongoing reviews that will have
+an impact on our discipline include: the Shadbolt and
+Wakeham reviews of computer science and STEM graduate employability
+(as well as degree accreditation); the new UK QAA Subject Benchmark
+Statement for Computing to be published in early 2016; the 2014 UK
+Digital Skills Taskforce report [\url{http://www.ukdigitalskills.com}]
+(``{\emph{Digital Skills for Tomorrow's World}}''), the 2015 UK
+House of Lords Select Committee on Digital Skills' report
+[\url{http://www.parliament.uk/digital-skills-committee}]
+(``{\emph{Make or Break: The UK's Digital Future}}''), as well as
+emergent effects from the recent or upcoming changes to the computing
+curricula across the four nations of the UK.
+ 
+Finally, we acknowledge the impact of the application of computational
+techniques across science and engineering and how this has
+fundamentally affected practices within those disciplines. Computing
+is both a rigorous academic discipline in its own right and also
+facilitates and supports a wide range of other disciplines, from
+computational physics to computational social science; in essence it
+has become a bridge for interdisciplinarity: it now does not only
+support how science is done, but what science is done
+\cite{RS}. Therefore, aspects from this report (and from across
+computer science) could also be applied to a number of STEM
+disciplines that now need to teach introductory programming (and how
+to leverage data and computation to solve domain problems) in their
+undergraduate curricula.
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+% use section* for acknowledgment
+\ifCLASSOPTIONcompsoc
+  % The Computer Society usually uses the plural form
+  \section*{Acknowledgments}
+\else
+  % regular IEEE prefers the singular form
+  \section*{Acknowledgment}
+\fi
+
+
+The authors would like to thank all the tutors who have contributed to
+the development of these courses at both \Bath{} and \Cardiff{}: in
+many ways they are the real teachers.
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{10}
+
+\bibitem{Astrachan}
+Astrachan, O., and Reed, D., AAA and CS 1: the applied apprenticeship approach to CS 1. ACM SIGCSE Bulletin, 27(1995), 1--5.
+\bibitem{BenAri}
+Ben-Ari, M., `Constructivism in Computer Science Education', J. Computers in Mathematics and Science Teaching 20(2001), 45--73.
+\bibitem{Boustedt}Boustedt, J., Eckerdal, A., McCartney, R.,
+  Mostr\"om, J. E., Ratcliffe, M., Sanders, K. and Zander, C.,
+  `Threshold Concepts in Computer Science: Do They Exist and Are They
+  Useful?', Proc. 38th SIGCSE Technical Symposium on Computer Science
+  Education (SIGCSE'07), ACM Press, pp. 504--508.
+\bibitem{brown-et-al-sigcse2013}
+Brown, N.C.C., K\"{o}lling, M., Crick, T., {Peyton Jones}, S., Humphreys,
+S., and Sentance, S. ``{Bringing Computer Science Back Into Schools: Lessons
+  from the UK},'', Proc. 44th ACM Technical Symposium on Computer
+Science Education (SIGCSE'13), ACM Press, pp. 269--274.
+\bibitem{brown-et-al-toce2014}
+Brown, N.C.C., Sentance, S., Crick, T., and Humphreys, S. ``{Restart: The Resurgence
+  of Computer Science in UK Schools},'' \emph{{ACM TOCE}} 14(2), pp.
+  1--22, 2014.
+\bibitem{Clancy}Clancy, M., Computer Science Education Research,
+  Routledge, chapter Misconceptions and Attitudes that Interfere with
+  Learning to Program, pp. 85--100, 2004.
+\bibitem{XX}Davenport, J.H., Wilson, D., Graham, I., Sankaran, G., Spence, A., Blake, J. and Kynaston, S.,
+Interdisciplinary Teaching of Computing to Mathematics Students:
+Programming and Discrete Mathematics.
+To appear in {\it MSOR Connections\/}.
+\url{http://journals.heacademy.ac.uk/doi/abs/10.11120/msor.2014.00021}.
+\url{http://opus.bath.ac.uk/37841/}.
+\bibitem{Eckerdal}Eckerdal, A., McCartney, R., Mostr\"om, J. E., Ratcliffe, M., Sanders, K. and Zander, C., `Putting Threshold Concepts into Context in Computer Science Education', Proc. 11th Annual SIGCSE Conference on Innovation and Technology in Computer Science Education (ITICSE'06), ACM Press, pp. 103--107.
+\bibitem{Hazzan}Hazzan, O., Lapidot, T. and Ragonis, N., Guide to Teaching Computer Science: An Activity-Based Approach, Springer, 2011.
+\bibitem{Khalife}Khalife, J., `Threshold for the introduction of
+  programming: providing learners with a simple computer model', in
+  Proc. 28th Int. Conf. on Information Technology Interfaces,
+  pp. 71--76, 2006.
+\bibitem{Land}Land, R., Meyer, J. H. and Smith, J., eds, Threshold Concepts and Transformational Learning, Vol. 16 of Educational Futures: Rethinking Theory and Practice, Sense Publishers, 2008.
+\bibitem{Meyer}Meyer, J. H., Land, R. and Baillie, C., eds, Threshold Concepts and Transformational Learning, Vol. 42 of Educational Futures: Rethinking Theory and Practice, Sense Publishers, 2010.
+\bibitem{RS}Royal Society, `Science as an open enterprise', \url{https://royalsociety.org/topics-policy/projects/science-public-enterprise/report}.
+\bibitem{Viha}
+Vihavainen, A., Paksula, M. and Luukkainen, M., `Extreme Apprenticeship Method in Teaching Programming for Beginners', in Proc. 42nd ACM Technical Symposium on Computer Science Education (SIGCSE'11), ACM Press, pp. 93--98.
+
+\bibitem{Willman}
+Willman, S., Lind\'ena, R., Kaila, E., Rajala, T., Laakso, M.-J. and
+Salakoski, T., `On study habits on an introductory course on
+programming', Computer Science Education 25(3) pp. 276--291, 2015.
+ 
+
+
+
+
+%\bibitem{IEEEhowto:kopka} H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
