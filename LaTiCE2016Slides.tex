@@ -1,0 +1,196 @@
+\def\red#1{{\color{red}#1}}
+\def\redtt{\color{red}\tt}
+\def\bluett{\color{blue}\tt}
+\font\manual=manfnt
+\def\dbend{{\manual\char127}}
+\def\N{{\bf N}}
+\def\us{\buildrel\hbox{\rm us}\over\Leftrightarrow}
+\def\arccot{\mathop{\rm arccot}\nolimits}
+\def\arcsin{\mathop{\rm arcsin}\nolimits}
+\def\Arcsin{\mathop{\rm Arcsin}\nolimits}
+%\documentclass{beamer}
+\documentclass[handout]{beamer}
+
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{epsfig}
+\usepackage[final]{pdfpages}
+\usepackage{graphicx}
+
+\bibliographystyle{plain}
+
+\title{Innovative Pedagogical Practices in the Craft of Computing}
+
+\author{{\bf James H. Davenport}, Tom Crick, Alan Hayes, Rachid Hourizi}
+\institute{University of Bath ({\tt initials.surname@bath.ac.uk})\\Crick is at Cardiff Metropolitan University ({\tt tcrick@cardiffmet.ac.uk})}
+\date{2 April 2016}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}\frametitle{\centerline{Theses}}
+\pause
+\begin{itemize}[<+->]
+\item Programming as such is fundamentally a craft: it cannot be taught in lectures, but rather learned by doing,
+\item[](but a summative piece of coursework is not enough: one needs {\color{red}doing} throughout the course)
+\item and by having that doing coached, supported {\color{red}and (constructively) criticised},
+\item hence the tutor, delivering, either interactively or deferred, feedback, is key to the experience
+\item ``large'' $\equiv$ the lecturer is not the tutor, at which point tutor management becomes important
+\end{itemize}
+\pause
+There's also an odd paradox: we teach children to read before we teach them to write, but we (generally) teach students to write programs before (if ever) we teach them to read programs!
+\end{frame}
+\begin{frame}\frametitle{\centerline{JHD's setting}}
+Programming and Discrete Mathematics \cite{Davenportetal2014a}\pause
+\begin{description}[<+->]
+\item[Situation]All year first year module: 20\% of First Year Mathematics programmes
+\item[Content]50\% programming, 50\% discrete mathematics (DM)
+\item[330]students in 2015--6
+\item[Per week]1 programming lecture, 1 DM lecture, one example class, to all 330
+\item[And]one DM tutorial (approx 20 students), one programming lab (on Friday, so after cohort classes)
+\item[\dbend]initially no separate DM tutorials, then additional DM tutors in the labs, but these didn't work
+\item[\dbend]It took a two-year fight to get the labs all scheduled after the whole-cohort events, but it significantly simplified the teaching
+\item[Lab]physically holds 75, seated at 5 tables with 15 computers each (also master console, beamer, whiteboards)
+\end{description}
+\end{frame}
+\begin{frame}\frametitle{\centerline{Conceptual model \color{red} for programming}}
+(It's a good question how much further this extends: quite possibly other practical aspects of computing, possibly other subjects like Chemistry)
+\pause
+\begin{description}[<+->]
+\item[Students]are the equivalent of medieval apprentices: there to learn a craft
+\item[Lecturer]is the master who teaches, and ultimately assesses, that craft
+\item[Tutors]are the journeymen [literally {\it journ\'ee-men}, in that they are paid by the day!] who assist the master and show the apprentices directly
+\item[Note]That I do not use the word ``demonstrator'' (despite university pay scales!) --- it gives the wrong impression
+\end{description}
+\end{frame}
+\begin{frame}\frametitle{\centerline{All playing their part}}
+(a fair amount of orchestration is required; it doesn't always go according to plan, and each year is slightly different)\pause\vfil
+\begin{description}[<+->]
+\item[Lecturer]demonstrates (preferably {\color{red}live}) the writing, testing and debugging of a suitable program
+%We are extending the live programming element within the CS unit but but do not yet demonstrate all code included in lectures. Our preference is for comprehensive live demonstration but we aren't there yet.
+\item[Program]and ideally the diary of the session, and the video of the session, are provided to the students afterwards
+\item[Lab exercise]is then a development of that program
+\item[Tutors]assist with the exercise, and give feedback
+\end{description}
+\end{frame}
+\begin{frame}\frametitle{\centerline{How does one make the students do the exercises?}}\pause
+A good question. \pause Two models at Bath.\pause
+\begin{description}[<+->]
+\item[Bath CS](120 students) The exercises are marked (increasingly automatically) and worth 17\% of the total
+%We currently use our automated marking tool to suggest sixty percent of the coursework marks but this suggestion need not be adopted by the final marker (a human tutor). In practice, very few changes are made to the automated component but the opportunity exists to overrule (and improve the tool)
+\item[Bath Maths](330 students) Marked manually on the spot, or automatically before the lab, as pass/fail. 
+\item[]Tutors are told that a student who does the work, or asks sensibly for help and acts on it, should get the pass.
+\item[But]failure to get 80\% of the ticks results in pro rata deduction from the summative coursework.
+\item[in 7 years]JHD has never had an appeal against the justice of a pass/fail (problems with the recording, certainly, as tutors are only human)
+\item[80\% rule] \red{explicitly} deals with minor medical circum\-stances, family absences etc.: late starters/transfers in are the majority of ``special cases''
+\end{description}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\centerline{Example: Week 1}}
+\begin{description}[<+->]
+\item[Lecturer]defines ``$n$ factorial'' formally, then writes the  MatLab, {\color{red} and tests it}
+\item[Then]Notes that \verb+factorial(-1)+ loops, so fixes this, and adds an error message
+\item[Then]Notes that \verb+factorial(1.5)+ gives this message inappropriately, fixes this, and adds another error message
+\item[Students]Are then asked to write Fibonacci as that week's exercise
+\item[Tutors]are told that \verb+Fibonacci(19)==6765+ is an adequate check for the tick, {\bf but} they should push students towards error messages, comments etc.
+\end{description}
+\end{frame}
+\begin{frame}[fragile]\frametitle{\centerline{Marking}}
+\pause
+\begin{description}[<+->]
+\item[Weekly exercises]100\% correctness: tutors give informal feedback on style etc. 
+\end{description}
+\begin{itemize}[<+->]
+\item Initially, a simple question e.g. \verb+Fibonacci(19)+
+\item Later on students download a test harness, and Moodle gives a random (3 out of 13) quiz on the answers: students get a bonus pass for this
+\end{itemize}
+\begin{description}[<+->]
+\item[Summ/Formative Coursework]80\% automatic correctness, 20\% style assigned by tutors
+\item[10+ tutors]implies a need for moderation
+\item[Automatic]marking has a tendancy to over-penalise: ``I make one mistake and therefore get many penalties''.
+\item[Students/Tutors]can request re-consideration (the marking scripts also evolve)
+\item[One]collective complaint about justness in six years, and correctly so (new coursework)
+\end{description}
+\end{frame}
+\begin{frame}\frametitle{\centerline{Management of Tutors}}\pause
+and the tutor/student relationship
+\pause
+\begin{description}[<+->]
+\item[N.B.]In a week, JHD delivers $1\frac12$ hours, and the tutors 25
+\item[Assign]students and tutors to tables in the lab (1:14 not 5:70)
+\item[Brief]tutors well at the start of term, and set up a tutors mailing list, which they can use
+\item[JHD]attends all of the first week labs (and ideally all the second week).
+\item[Mix]Experienced/new tutors in the same lab
+\item[Appoint]\red{senior tutor(s)} (and have a staffing strategy)
+\end{description}
+\begin{itemize}[<+->]
+\item For junior tutors to ask questions
+\item to report problems back to the lecturer (avoid ``everyone's problem is no-one's problem'') {\color{red}NEW!} this has just happened
+\item To bounce ideas/ new briefing materials off
+\item To write papers with: \cite{Davenportetal2014a} has three tutor authors
+\end{itemize}
+\end{frame}
+\begin{frame}\frametitle{\centerline{Conclusions}}\pause
+\begin{enumerate}[<+->]
+\item Automation pays as student numbers grow: JHD started at 220 students in 2009, and now has 330, {\bf but} it's not a free ride, and you have to accept  problems
+\item As CS has grown (from 60 to 120) RH has adopted more JHD techniques: imitation is the sincerest form of flattery!
+\item[*]Automated marking adopted, and now accounts for 60\% of marks of weekly exercises
+\item Both technological and managerial/pedagogical
+\item[*]More writing \red{live} of programs in lectures
+\item[*]Senior Tutor r\^ole started in 2015 in CS
+\item[JHD?]Room for more ``learning analytics'' --- currently limited to warning students who don't complete weekly work
+\end{enumerate}
+\end{frame}
+%\begin{frame}\frametitle{\centerline{Theses}}
+%\end{frame}
+%\begin{frame}\frametitle{\centerline{Theses}}
+%\end{frame}
+\begin{frame}\frametitle{References}
+%\bibliography{../../../jhd}
+\begin{thebibliography}{1}
+
+\bibitem{Davenportetal2014a}
+J.H. Davenport, D.~Wilson, I.~Graham, G.~Sankaran, A.~Spence, J.~Blake, and
+  S.~Kynaston.
+\newblock{(4 professors and 3 tutors)}
+\newblock {Interdisciplinary Teaching of Computing to Mathematics Students:
+  Programming and Discrete Mathematics}.
+\newblock \url{http://opus.bath.ac.uk/37841/}.
+\newblock \red{\dbend}{\em To appear in MSOR Connections}, 2014.
+\newblock \qquad\url{http://journals.heacademy.ac.uk/doi/abs/10.11120/msor.2014.00021}.
+\end{thebibliography}
+\end{frame}
+\end{document}
+\begin{frame}
+\frametitle{\centerline{Pedagogical Correctness}}
+%\pause
+\begin{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}\frametitle{References}
+
+% \def\bibitem\item
+% \begin{enumerate}
+\small\input{BICS.bbl}
+% \end{enumerate}
+\frametitle{\centerline{Computers and Mathematics}}
+
+\end{frame}
+
+Sample question This is the formula for finding the circumference of a circle: C = 2pr Rearrange the formula to make r the subject.
+www.bbc.co.uk/schools/ks3bitesize/maths/a.../formulae_2_5.shtml
+
+Example 1 A cashier used the formula below to work out plumbers' wages. Put these values into the formula: W = 7(40 + 1.5 x 4 + 2 x 6) = 7(40 + 6 + 12) Work inside the brackets first.  
+www.bbc.co.uk/scotland/education/bitesiz.../formulae_rev2.shtml
+
+Constructing a formula Example Trendy plc make coffee tables of different sizes. So the formula is: M = 5N + 3 d) The table is 400 cm long.
+www.bbc.co.uk/scotland/education/bitesiz.../formulae_rev3.shtml
+
+Not many used the most appropriate formulae. Many who produced a formula which was close did not gain the mark because the equals sign appeared anywhere, not at the beginning where it should.
+http://www.ocr.org.uk/Data/publications/reports_2008/L_GCSE_ICT_A_ER_June_2008.pdf: 2357/01 Paper 1 (Foundation) question 9d.
+
+In this type of question the formula must contain an equals sign .... examiner with an answer that was almost impossible to read, because of much crossing ...
+www.cie.org.uk/docs/dynamic/24751.pdf -
+
